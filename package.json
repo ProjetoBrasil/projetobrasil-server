@@ -3,31 +3,31 @@
   "version": "0.0.1",
   "main": "lib/projetobrasil-server.js",
   "description": "Servidor REST do ProjetoBrasil.org",
-  "homepage": "api.projetobrasil.org",
-  "bugs": "https://github.com/luizpcf@gmail.com/projetobrasil-server/issues",
+  "homepage": "http://api.projetobrasil.org",
+  "bugs": "https://github.com/ProjetoBrasil/projetobrasil-server/issues",
   "author": {
     "name": "Luiz Ferreira",
     "email": "luizpcf@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/luizpcf@gmail.com/projetobrasil-server"
+    "url": "https://github.com/ProjetoBrasil/projetobrasil-server"
   },
   "license": "MIT",
   "files": [
     "lib"
   ],
   "keywords": [],
-  "devDependencies": {
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-nodeunit": "^0.3.3",
-    "grunt-contrib-watch": "^0.6.1",
-    "load-grunt-tasks": "^0.4.0",
-    "time-grunt": "^0.3.1",
-    "jshint-stylish": "^0.2.0",
-    "express":"3.x",
-    "mongoose": "3.x",
-    "mongodb" : "1.x"
+  "dependencies": {
+    "express-jwt": "~0.2.1",
+    "jsonwebtoken": "~0.4.0",
+    "bcrypt": "~0.7.8",
+    "express": "~4.1.1",
+    "json": "0.0.14",
+    "body-parser": "~1.0.2",
+    "morgan": "~1.0.1",
+    "redis": "~0.10.1",
+    "dynamodb":"~0.3.6"
   },
   "scripts": {
     "test": "grunt"
