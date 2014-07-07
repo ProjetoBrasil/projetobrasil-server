@@ -18,8 +18,7 @@ routes.political_parties = require('./lib/routes/political_parties');
 
 
 app.all('*', function(req, res, next) {
-  res.set('Access-Control-Allow-Origin', 'http://www.projetobrasil.org');
-  res.set('Access-Control-Allow-Origin', 'http://projetobrasil.org');
+  res.set('Access-Control-Allow-Origin', ['http://www.projetobrasil.org','http://projetobrasil.org']);
   res.set('Access-Control-Allow-Credentials', true);
   res.set('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT');
   res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Authorization');
