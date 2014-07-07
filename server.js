@@ -14,10 +14,11 @@ app.use(morgan());
 var routes = {};
 routes.politicians = require('./lib/routes/politicians.js');
 routes.proposals = require('./lib/routes/proposals.js');
+routes.political_parties = require('./lib/routes/political_parties');
 
 
 app.all('*', function(req, res, next) {
-  res.set('Access-Control-Allow-Origin', 'http://api.projetobrasil.org');
+  res.set('Access-Control-Allow-Origin', 'http://projetobrasil.org');
   res.set('Access-Control-Allow-Credentials', true);
   res.set('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT');
   res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Authorization');
@@ -41,6 +42,9 @@ app.get('/v1/politicians', routes.politicians.findAll);
 
 //Get a politician
 app.get('/v1/politician/:id', routes.politicians.findById);
+
+//Get a politician
+app.get('/v1/politician/:id/proposals', routes.politicians.findProposalsById);
 
 //Create a new politician
 app.post('/v1/politician', routes.politicians.add); 
