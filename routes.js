@@ -15,19 +15,19 @@ function setup(app) {
 	
 	//Login Twitter:
 	//app.get('/v1/connect/twitter', users.loginTwitter);
-	//app.get('/v1/connect/twitter/callback', users.loginTwitterCalback);
+	//app.get('/v1/connect/twitter/callback', users.loginTwitterCallback);
 
 	//Login Facebook:
-	//app.get('/v1/auth/facebook', users.loginTwitter);
-	//app.get('/v1/auth/facebook/callback', users.loginTwitterCalback);
+	//app.get('/v1/auth/facebook', users.loginFacebook);
+	//app.get('/v1/auth/facebook/callback', users.loginFacebookCallback);
 
 	//Login Google:
-	//app.get('/v1/auth/google', users.loginTwitter);
-	//app.get('/v1/auth/google/return', users.loginTwitterCalback);
+	//app.get('/v1/auth/google', users.loginGoogle);
+	//app.get('/v1/auth/google/return', users.loginGoogleCallback);
 
 	//Login Linkedin:
-	//app.get('/v1/auth/linkedin', users.loginTwitter);
-	//app.get('/v1/auth/linkedin/callback', users.loginTwitterCalback);
+	//app.get('/v1/auth/linkedin', users.loginLinkedin);
+	//app.get('/v1/auth/linkedin/callback', users.loginLinkedinCalback);
 
 	//Politicians routes
 	app.get('/v1/politicians', politicians.findAll);
