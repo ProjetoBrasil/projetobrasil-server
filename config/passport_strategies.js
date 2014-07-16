@@ -21,13 +21,12 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 					{
 						user = {
 							name: profile.displayName,
-							email: profile.emails[0].value,
-							username: profile.username,
+							username: profile.emails[0].value,
 							provider_id: profile.id,
 							provider: 'facebook',
 							facebook: profile._json
 						};
-						ddb.putItem('politicians', politician, {}, function (err) {
+						ddb.putItem('accounts', user, {}, function (err) {
 							if (!err) {
 								return done(err, user);
 							} else {

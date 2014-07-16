@@ -1,5 +1,3 @@
-var jwt = require('express-jwt'),
-	secret = require('./config/secret');
 
 function setup(app) {
 	//Routes
@@ -11,7 +9,9 @@ function setup(app) {
 	//Local login routes
 	app.post('/v1/user/register', users.register);
 	app.post('/v1/user/login', users.login);
-	app.get('/v1/user/logout', users.logout); 
+	app.get('/v1/user/logout', users.logout);
+
+	app.get('/v1/profile', users.findById); 
 	
 	//Login Twitter:
 	//app.get('/v1/connect/twitter', users.loginTwitter);
@@ -49,7 +49,9 @@ function setup(app) {
 	app.get('/v1/political_parties/:sigla', political_parties.findById);
 	app.post('/v1/political_parties', political_parties.add);
 	app.put('/v1/political_parties/:sigla', political_parties.update);
-	app.delete('/v1/political_parties/:sigla', political_parties.delete); 
+	app.delete('/v1/political_parties/:sigla', political_parties.delete);
+
+	app.delete('/v1/initialPage/politicians', politicians.initialPage);
 };
 
 exports.setup = setup;

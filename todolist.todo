@@ -1,0 +1,24 @@
+Projeto Brasil Server:
+
+ ✔ CRUD usuários. @done (14-07-16 12:29)
+ ☐ Interações de login
+   ☐ Resetar Senha
+   ☐ Confirmar email
+   ☐ Login com facebook
+ ☐ Votação
+   ☐ Criar tabelas
+   ☐ Disponibilizar json
+   ☐ Emitir erro ao não estar logado.
+       if (req.isAuthenticated()) {
+    console.log(req._passport.session.user); 
+
+ ✔ Politicos @done (14-07-16 12:23)
+ ✔ Propostas @done (14-07-16 12:23)
+ ✔ Partidos @done (14-07-16 12:23)
+
+
+--- ✄ -----------------------
+
+
+
+

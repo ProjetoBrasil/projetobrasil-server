@@ -28,7 +28,10 @@
     "morgan": "~1.0.1",
     "redis": "~0.10.1",
     "dynamodb":"~0.3.6",
-    "node-uuid":"~1.4.1" 
+    "node-uuid":"~1.4.1",
+    "passport":"~0.2.0",
+    "passport-local":"~1.0.0",
+    "passport-facebook":"~1.0.3" 
   },
   "scripts": {
     "test": "grunt"

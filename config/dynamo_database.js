@@ -1,13 +1,5 @@
-var fwk = require('fwk');
-var config = fwk.baseConfig(); 
+var secret = require('./secret');
 
-config['DYNAMODB_ACCESSKEYID']     = 'REPLACE_IN_ENV_OR_ARGS';
-config['DYNAMODB_SECRETACCESSKEY'] = 'REPLACE_IN_ENV_OR_ARGS';
+var ddb = require('dynamodb').ddb(secret.aws);
 
-var cfg = fwk.populateConfig(config);
-
-var ddb = require('dynamodb').ddb({ accessKeyId     : cfg['DYNAMODB_ACCESSKEYID'],
-                                    secretAccessKey : cfg['DYNAMODB_SECRETACCESSKEY'] });
-
-exports.config = cfg
 exports.ddb = ddb
