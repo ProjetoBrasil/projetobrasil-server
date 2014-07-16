@@ -1,20 +1,34 @@
 Projeto Brasil Server:
 
- ✔ CRUD usuários. @done (14-07-16 12:29)
+ ☐ CRUD usuários
+   ☐ Adicionar requisição de cadastro
+   ☐ Adicionar upload de avatar
+   ☐ Testar todas as requisições
+   ☐ Escrever testes automáticos
  ☐ Interações de login
    ☐ Resetar Senha
    ☐ Confirmar email
    ☐ Login com facebook
+   ☐ Testar todas as requisições
+   ☐ Escrever testes automáticos
  ☐ Votação
    ☐ Criar tabelas
    ☐ Disponibilizar json
    ☐ Emitir erro ao não estar logado.
        if (req.isAuthenticated()) {
     console.log(req._passport.session.user); 
-
- ✔ Politicos @done (14-07-16 12:23)
- ✔ Propostas @done (14-07-16 12:23)
- ✔ Partidos @done (14-07-16 12:23)
+   
+   ☐ Testar todas as requisições
+   ☐ Escrever testes automáticos
+ ☐ Politicos
+   ☐ Testar todas as requisições
+   ☐ Escrever Testes automáticos
+ ☐ Propostas
+   ☐ Testar todas as requisições
+   ☐ Escrever Testes automáticos
+ ☐ Partidos
+   ☐ Testar todas as requisições
+   ☐ Escrever testes automáticos
 
 
 --- ✄ -----------------------

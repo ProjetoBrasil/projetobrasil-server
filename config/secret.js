@@ -4,7 +4,8 @@ exports.facebookAppId = process.env.facebookAppId || '';
 
 exports.facebookAppSecret = process.env.facebookAppSecret || '';
 
-exports.aws = {
-	accessKeyId: process.env.DYNAMODB_ACCESSKEYID || '',
-	secretAccessKey: process.env.DYNAMODB_SECRETACCESSKEY || ''
-}
+aws = {};
+aws.accessKeyId = process.env.DYNAMODB_ACCESSKEYID || '';
+aws.secretAccessKey = process.env.DYNAMODB_SECRETACCESSKEY || '';
+
+exports.aws = aws;

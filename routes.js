@@ -50,8 +50,6 @@ function setup(app) {
 	app.post('/v1/political_parties', political_parties.add);
 	app.put('/v1/political_parties/:sigla', political_parties.update);
 	app.delete('/v1/political_parties/:sigla', political_parties.delete);
-
-	app.delete('/v1/initialPage/politicians', politicians.initialPage);
 };
 
 exports.setup = setup;
