@@ -1,12 +1,14 @@
 Projeto Brasil Server:
 
- ☐ CRUD usuários
+ ☐ Usuários
+   ✔ Criar CRUD de usuários @done (14-07-17 12:47)
    ☐ Adicionar requisição de cadastro
    ☐ Adicionar upload de avatar
    ☐ Testar todas as requisições
    ☐ Escrever testes automáticos
- ☐ Interações de login
+ ☐ login
    ☐ Resetar Senha
+   ☐ Criptografar senha
    ☐ Confirmar email
    ☐ Login com facebook
    ☐ Testar todas as requisições
@@ -29,6 +31,10 @@ Projeto Brasil Server:
  ☐ Partidos
    ☐ Testar todas as requisições
    ☐ Escrever testes automáticos
+ ☐ Comentários
+   ☐ Criar CRUD de comentários
+   ☐ Testar todas as requisições
+   ☐ Escrever Testes automáticos
 
 
 --- ✄ -----------------------
