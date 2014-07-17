@@ -10,6 +10,9 @@ Projeto Brasil Server:
    ☐ Resetar Senha
    ☐ Criptografar senha
    ☐ Confirmar email
+     ✔ Envio de email de confirmação @done (14-07-17 18:17)
+     ☐ Formatar o email bonitinho
+     ✔ Criar serviço que verifica se o código fornecido está correto @done (14-07-17 18:37)
    ☐ Login com facebook
    ☐ Testar todas as requisições
    ☐ Escrever testes automáticos

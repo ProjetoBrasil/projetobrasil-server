@@ -4,7 +4,7 @@ var checkAuthorization = function (req, res, next) {
     }
     next();
 };
-    
+
 function setup(app) {
 	//Routes
 	var politicians = require('./lib/routes/politicians.js'),
@@ -19,6 +19,7 @@ function setup(app) {
 	app.post('/v1/user/register', users.register);
 	app.post('/v1/user/login', users.login);
 	app.get('/v1/user/logout', users.logout);
+	app.get('/v1/user/validadeMail/:username/:comfirmationPass', users.validadeMail);
 
 	app.get('/v1/profile', users.findById); 
 	
