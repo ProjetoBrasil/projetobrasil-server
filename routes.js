@@ -1,4 +1,10 @@
-
+var checkAuthorization = function (req, res, next) {
+    if (!req.user) {
+        return res.send(401,{ error: 'The user can not do this action witout login.' });
+    }
+    next();
+};
+    
 function setup(app) {
 	//Routes
 	var politicians = require('./lib/routes/politicians.js'),
@@ -7,12 +13,7 @@ function setup(app) {
 		users = require('./lib/routes/users');
 		comments = require('./lib/routes/comments');
 
-	var checkAuthorization = function (req, res, next) {
-        if (!req.user) {
-            return res.send(401,{ error: 'The user can not do this action witout login.' });
-        }
-        next();
-    }
+	
 
 	//Local login routes
 	app.post('/v1/user/register', users.register);
@@ -63,7 +64,6 @@ function setup(app) {
 	app.get('/v1/comments', comments.findAll);
 	app.get('/v1/comments/:id', comments.findById);
 	app.post('/v1/comment', checkAuthorization, comments.add);
-	app.put('/v1/comment/:id', checkAuthorization, comments.update);
 	app.delete('/v1/comment/:id', checkAuthorization, comments.delete); 
 };
 

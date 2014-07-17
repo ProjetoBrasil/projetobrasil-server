@@ -2,7 +2,7 @@ Projeto Brasil Server:
 
  ☐ Usuários
    ✔ Criar CRUD de usuários @done (14-07-17 12:47)
-   ☐ Adicionar requisição de cadastro
+   ✔ Adicionar requisição de cadastro @done (14-07-17 15:22)
    ☐ Adicionar upload de avatar
    ☐ Testar todas as requisições
    ☐ Escrever testes automáticos

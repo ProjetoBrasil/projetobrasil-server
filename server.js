@@ -38,7 +38,7 @@ passport.deserializeUser(function(username, done) {
 
 strategies = require('./config/passport_strategies');
 
-//passport.use(strategies.facebookStrategy(secret.facebookAppId, secret.facebookAppSecret));
+passport.use(strategies.facebookStrategy(secret.facebookAppId, secret.facebookAppSecret));
 
 passport.use(new LocalStrategy(function(username, password, done) {
 		ddb.getItem('accounts', username, null, {}, function(err, res, user) {
