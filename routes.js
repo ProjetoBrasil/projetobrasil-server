@@ -5,6 +5,7 @@ function setup(app) {
 		proposals = require('./lib/routes/proposals.js'),
 		political_parties = require('./lib/routes/political_parties'),
 		users = require('./lib/routes/users');
+		comments = require('./lib/routes/comments');
 
 	//Local login routes
 	app.post('/v1/user/register', users.register);
@@ -50,6 +51,10 @@ function setup(app) {
 	app.post('/v1/political_parties', political_parties.add);
 	app.put('/v1/political_parties/:sigla', political_parties.update);
 	app.delete('/v1/political_parties/:sigla', political_parties.delete);
+
+	//Comments routes
+	app.get('/v1/comments', comments.findAll);
+	app.get('/v1/comments/:id', comments.findAll);
 };
 
 exports.setup = setup;
