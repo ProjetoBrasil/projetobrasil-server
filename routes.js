@@ -12,6 +12,7 @@ function setup(app) {
 		political_parties = require('./lib/routes/political_parties'),
 		users = require('./lib/routes/users');
 		comments = require('./lib/routes/comments');
+		rating = require('./lib/routes/ratings');
 
 	
 
@@ -65,7 +66,9 @@ function setup(app) {
 	app.get('/v1/comments', comments.findAll);
 	app.get('/v1/comments/:id', comments.findById);
 	app.post('/v1/comment', checkAuthorization, comments.add);
-	app.delete('/v1/comment/:id', checkAuthorization, comments.delete); 
+	app.delete('/v1/comment/:id', checkAuthorization, comments.delete);
+
+	app.get('/v1/rating/:id', rating.findById);
 };
 
 exports.setup = setup;

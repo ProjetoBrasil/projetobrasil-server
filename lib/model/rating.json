@@ -1,0 +1,25 @@
+{
+	"nome":"Brasil",
+	"valor": 3.7,
+	"estados": 
+	[{
+		"nome": "MG",
+		"valor": 1.3,
+		"notas":[{"label":"1", "valor":10},{"label":"2", "valor":10},{"label":"3", "valor":10},{"label":"4", "valor":10},{"label":"5", "valor":10}]
+	},
+	{
+		"nome": "SP",
+		"valor": 2.3,
+		"notas":[{"label":"1", "valor":15},{"label":"2", "valor":27},{"label":"3", "valor":10},{"label":"4", "valor":10},{"label":"5", "valor":10}]
+	},
+	{
+		"nome": "RJ",
+		"valor": 3.8,
+		"notas":[{"label":"1", "valor":10},{"label":"2", "valor":38},{"label":"3", "valor":10},{"label":"4", "valor":46},{"label":"5", "valor":10}]
+	},
+	{
+		"nome": "ES",
+		"valor": 4.4,
+		"notas":[{"label":"1", "valor":12},{"label":"2", "valor":10},{"label":"3", "valor":27},{"label":"4", "valor":55},{"label":"5", "valor":10}]
+	}]
+}
