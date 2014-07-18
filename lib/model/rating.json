@@ -1,6 +1,7 @@
 {
 	"nome":"Brasil",
 	"valor": 3.7,
+	"notas":[{"label":"1", "valor":47},{"label":"2", "valor":85},{"label":"3", "valor":57},{"label":"4", "valor":121},{"label":"5", "valor":40}],
 	"estados": 
 	[{
 		"nome": "MG",
