@@ -29,12 +29,14 @@ Projeto Brasil Server:
    ✔ Adicionar campos relativos a coligação e partidos @done (14-07-21 21:12)
    ☐ Adicionar bens
      ✔ Fazer o CRUD de bens @done (14-07-21 21:27)
+     ☐ Criar tabelas no Dynamo
      ☐ Testar as requisições
      ☐ Escrever testes automáticos
    ☐ Adicionar historico
-     ☐ Fazer o CRUD de historico
+     ✔ Fazer o CRUD de historico @done (14-07-21 21:34)
+     ☐ Criar tabelas no Dynamo
      ☐ Testar as requisições
-     ☐ EScrever testes automáticos
+     ☐ Escrever testes automáticos
    ☐ Testar todas as requisições
    ☐ Escrever Testes automáticos
  ☐ Propostas
