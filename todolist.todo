@@ -26,6 +26,15 @@ Projeto Brasil Server:
    ☐ Testar todas as requisições
    ☐ Escrever testes automáticos
  ☐ Politicos
+   ✔ Adicionar campos relativos a coligação e partidos @done (14-07-21 21:12)
+   ☐ Adicionar bens
+     ✔ Fazer o CRUD de bens @done (14-07-21 21:27)
+     ☐ Testar as requisições
+     ☐ Escrever testes automáticos
+   ☐ Adicionar historico
+     ☐ Fazer o CRUD de historico
+     ☐ Testar as requisições
+     ☐ EScrever testes automáticos
    ☐ Testar todas as requisições
    ☐ Escrever Testes automáticos
  ☐ Propostas
