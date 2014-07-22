@@ -56,7 +56,7 @@ function setup(app) {
 	app.get('/v1/proposals', proposals.findAll);
 	app.get('/v1/proposal/:id', proposals.findById);
 	app.post('/v1/proposal', checkAuthorization, proposals.add);
-	app.put('/v1/proposal/:id', proposals.update);
+	app.put('/v1/proposal/:id', checkAuthorization, proposals.update);
 	app.delete('/v1/proposal/:id', checkAuthorization, proposals.delete); 
 
 	//Goods routes
