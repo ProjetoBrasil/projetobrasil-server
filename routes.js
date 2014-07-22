@@ -10,10 +10,11 @@ function setup(app) {
 	var politicians = require('./lib/routes/politicians.js'),
 		proposals = require('./lib/routes/proposals.js'),
 		political_parties = require('./lib/routes/political_parties'),
-		users = require('./lib/routes/users');
-		comments = require('./lib/routes/comments');
-		rating = require('./lib/routes/ratings');
-		goods = require('./lib/routes/goods');
+		users = require('./lib/routes/users'),
+		comments = require('./lib/routes/comments'),
+		rating = require('./lib/routes/ratings'),
+		goods = require('./lib/routes/goods'),
+		curriculum = require('./lib/routes/curriculum');
 
 	
 
@@ -46,6 +47,7 @@ function setup(app) {
 	app.get('/v1/politician/:id', politicians.findById);
 	app.get('/v1/politician/:id/proposals', politicians.findProposalsById);
 	app.get('/v1/politician/:id/goods', politicians.findGoodsById);
+	app.get('/v1/politician/:id/curriculum', politicians.findCurriculumById);
 	app.post('/v1/politician', checkAuthorization, politicians.add);
 	app.put('/v1/politician/:id', checkAuthorization, politicians.update);
 	app.delete('/v1/politician/:id', checkAuthorization, politicians.delete);
@@ -63,6 +65,13 @@ function setup(app) {
 	app.post('/v1/good', checkAuthorization, goods.add);
 	app.put('/v1/good/:id', checkAuthorization, goods.update);
 	app.delete('/v1/good/:id', checkAuthorization, goods.delete); 
+
+	//Curriculum routes
+	app.get('/v1/curriculums', curriculum.findAll);
+	app.get('/v1/curriculum/:id', curriculum.findById);
+	app.post('/v1/curriculum', checkAuthorization, curriculum.add);
+	app.put('/v1/curriculum/:id', checkAuthorization, curriculum.update);
+	app.delete('/v1/curriculum/:id', checkAuthorization, curriculum.delete); 
 
 	//Political Parties routes
 	app.get('/v1/political_parties', political_parties.findAll);
