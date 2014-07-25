@@ -87,6 +87,7 @@ function setup(app) {
 	app.delete('/v1/comment/:id', checkAuthorization, comments.delete);
 
 	app.get('/v1/rating/:id', rating.findById);
+	app.post('/v1/rating/:id', checkAuthorization, rating.update);
 };
 
 exports.setup = setup;
