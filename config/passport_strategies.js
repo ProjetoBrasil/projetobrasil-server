@@ -1,6 +1,8 @@
 var FacebookStrategy = require('passport-facebook').Strategy,
 	LocalStrategy =   require('passport-local').Strategy;
 
+var bcrypt =require('bcrypt');
+
 var ddb = require('./dynamo_database').ddb;
 
 
