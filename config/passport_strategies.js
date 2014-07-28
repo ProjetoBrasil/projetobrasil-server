@@ -45,20 +45,3 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 		}
 	);
 };
-
-exports.localStrategy = function(username, password, done){
-	return new LocalStrategy(function(username, password, done) {
-		ddb.getItem('accounts', username, null, {}, function(err, res, user) {
-			if(err)
-				return done(err);
-			if(!user) {
-				return done(null, false, { message: 'Incorrect username.' });
-			}
-			if(!bcrypt.compareSync(password, user.password)) {
-				return done(null, false, { message: 'Incorrect username.' });
-			}
-			
-			return done(null, false, {message:'Ta certo, mas vou falar que ta errado'});
-	  	});
-	});
-}
