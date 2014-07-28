@@ -9,6 +9,8 @@ var express = require('express'),
 	secret = require('./config/secret'),
 	passport = require('passport');
 
+	var bcrypt =require('bcrypt');
+
 var ddb = require('./config/dynamo_database').ddb,
 	LocalStrategy =   require('passport-local').Strategy;
 
@@ -41,17 +43,17 @@ strategies = require('./config/passport_strategies');
 passport.use(strategies.facebookStrategy(secret.facebookAppId, secret.facebookAppSecret));
 
 passport.use(new LocalStrategy(function(username, password, done) {
-		ddb.getItem('accounts', username, null, {}, function(err, res, user) {
+		ddb.getItem('accounts', username, null, {}, function(err, user) {
 			if(err)
 				done(err);
 			if(!user) {
 				done(null, false, { message: 'Incorrect username.' });
 			}
-			else if(res.password != password) {
+			else if(!bcrypt.compareSync(password, user.password)) {
 				done(null, false, { message: 'Incorrect username.' });
 			}
 			else {
-				return done(null, res);
+				return done(null, user);
 			}
 	  	});
 	}));
