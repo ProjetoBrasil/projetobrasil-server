@@ -91,6 +91,7 @@ function setup(app) {
 
 	app.get('/v1/rating/:id', rating.findById);
 	app.post('/v1/rating/:id', checkAuthorization, rating.update);
+	app.get('/v1/graphRating/:id', rating.generatesGraphById);
 
 	//app.post('/v1/import', importation.importProposal);
 };
