@@ -10,6 +10,7 @@ function setup(app) {
 	var politicians = require('./lib/routes/politicians.js'),
 		proposals = require('./lib/routes/proposals.js'),
 		political_parties = require('./lib/routes/political_parties'),
+		userModel = require('./lib/model/userModel'),
 		users = require('./lib/routes/users'),
 		comments = require('./lib/routes/comments'),
 		rating = require('./lib/routes/ratings'),
@@ -19,12 +20,14 @@ function setup(app) {
 	
 
 	//Local login routes
+	//app.post('/v1/user/register', userModel.validadeUser,users.register);
 	app.post('/v1/user/register', users.register);
 	app.post('/v1/user/login', users.login);
 	app.get('/v1/user/logout', users.logout);
 	app.get('/v1/user/validadeMail/:username/:comfirmationPass', users.validadeMail);
 
-	app.get('/v1/profile', users.findById); 
+	app.get('/v1/profile', users.findById);
+	app.get('/v1/profile/ratings', users.findRatingsById); 
 	
 	//Login Twitter:
 	//app.get('/v1/connect/twitter', users.loginTwitter);
@@ -80,11 +83,11 @@ function setup(app) {
 	app.put('/v1/political_parties/:sigla', checkAuthorization, political_parties.update);
 	app.delete('/v1/political_parties/:sigla', checkAuthorization, political_parties.delete);
 
-	//Comments routes
+	/*//Comments routes
 	app.get('/v1/comments', comments.findAll);
 	app.get('/v1/comments/:id', comments.findById);
 	app.post('/v1/comment', checkAuthorization, comments.add);
-	app.delete('/v1/comment/:id', checkAuthorization, comments.delete);
+	app.delete('/v1/comment/:id', checkAuthorization, comments.delete);*/
 
 	app.get('/v1/rating/:id', rating.findById);
 	app.post('/v1/rating/:id', checkAuthorization, rating.update);
