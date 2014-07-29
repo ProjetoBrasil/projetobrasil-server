@@ -20,8 +20,7 @@ function setup(app) {
 	
 
 	//Local login routes
-	//app.post('/v1/user/register', userModel.validadeUser,users.register);
-	app.post('/v1/user/register', users.register);
+	app.post('/v1/user/register', userModel.validadeUser, users.register);
 	app.post('/v1/user/login', users.login);
 	app.get('/v1/user/logout', users.logout);
 	app.get('/v1/user/validadeMail/:username/:comfirmationPass', users.validadeMail);
