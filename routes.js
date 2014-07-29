@@ -15,7 +15,8 @@ function setup(app) {
 		comments = require('./lib/routes/comments'),
 		rating = require('./lib/routes/ratings'),
 		goods = require('./lib/routes/goods'),
-		curriculum = require('./lib/routes/curriculum');
+		curriculum = require('./lib/routes/curriculum'),
+		importation = require('./lib/aux/import');
 
 	
 
@@ -90,6 +91,8 @@ function setup(app) {
 
 	app.get('/v1/rating/:id', checkAuthorization, rating.findById);
 	app.post('/v1/rating/:id', checkAuthorization, rating.update);
+
+	//app.post('/v1/import', importation.importProposal);
 };
 
 exports.setup = setup;
