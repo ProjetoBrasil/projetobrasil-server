@@ -35,7 +35,7 @@ function setup(app) {
 	//app.get('/v1/connect/twitter', users.loginTwitter);
 	//app.get('/v1/connect/twitter/callback', users.loginTwitterCallback);
 
-	app.get('/v1/auth/facebook', passport.authenticate('facebook'));
+	app.get('/v1/auth/facebook', passport.authenticate('facebook', { scope: ['user_about_me', 'email', 'user_birthday'] }));
 	app.get('/v1/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/auth/success', failureRedirect: '/auth/failure' }));
 	app.get('/v1/auth/success', function(req, res) {
 	    res.send({user: req.user ? req.user : null });
