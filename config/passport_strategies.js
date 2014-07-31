@@ -30,8 +30,7 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 							name: profile.displayName,
 							username: profile.emails[0].value,
 							provider_id: profile.id,
-							provider: 'facebook',
-							facebook: profile._json
+							provider: 'facebook'
 						};
 						ddb.putItem('accounts', user, {}, function (err) {
 							if (!err) {
