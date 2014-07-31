@@ -13,6 +13,7 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 			callbackURL: '/v1/auth/facebook/callback'
 		},
 		function(accessToken, refreshToken, profile, done) {
+			console.log(profile);
 			ddb.scan('accounts', {filter : { provider_id : {eq:profile._json.id}}}, null, {}, function (err, users) {
 
 				if(err){
