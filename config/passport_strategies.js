@@ -15,7 +15,8 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 		function(accessToken, refreshToken, profile, done) {
 			console.log('accessToken: '+accessToken);
 			console.log('refreshToken: '+refreshToken);
-			console.log('profile: '+profile);
+			console.log('profile: ');
+			console.log(profile);
 			ddb.scan('accounts', {filter : { provider_id : profile._json.id}}, null, {}, function (err, users) {
 				if(err){
 					return done(err);
