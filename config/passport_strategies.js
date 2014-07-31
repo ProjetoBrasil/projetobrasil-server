@@ -14,7 +14,7 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 		},
 		function(accessToken, refreshToken, profile, done) {
 			console.log(profile);
-			ddb.scan('accounts', {filter : { provider_id : {eq:profile._json.id}}}, {}, function (err, users) {
+			ddb.scan('accounts', {filter : { provider_id : {eq:profile._json.id}}}, function (err, users) {
 
 				if(err){
 					console.log("Deu erro");
