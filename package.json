@@ -31,7 +31,11 @@
     "node-uuid":"~1.4.1",
     "passport":"~0.2.0",
     "passport-local":"~1.0.0",
-    "passport-facebook":"~1.0.3" 
+    "passport-facebook":"~1.0.3",
+    "underscore":"~1.6.0",
+    "nodemailer":"~1.1.1",
+    "nodemailer-ses-transport":"~1.0.0",
+    "cookie-session":"~1.0.1"
   },
   "scripts": {
     "test": "grunt"
