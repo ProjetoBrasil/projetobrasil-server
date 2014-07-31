@@ -1,3 +1,5 @@
+var passport = require('passport');
+
 var checkAuthorization = function (req, res, next) {
     if (!req.user) {
         return res.send(401,{ error: 'The user can not do this action witout login.' });
@@ -33,9 +35,14 @@ function setup(app) {
 	//app.get('/v1/connect/twitter', users.loginTwitter);
 	//app.get('/v1/connect/twitter/callback', users.loginTwitterCallback);
 
-	//Login Facebook:
-	//app.get('/v1/auth/facebook', users.loginFacebook);
-	//app.get('/v1/auth/facebook/callback', users.loginFacebookCallback);
+	app.get('/v1/auth/facebook', passport.authenticate('facebook'));
+	app.get('/v1/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/auth/success', failureRedirect: '/auth/failure' }));
+	app.get('/v1/auth/success', function(req, res) {
+	    res.send({user: req.user ? req.user : null });
+	});
+	app.get('/v1/auth/failure', function(req, res) {
+	    res.send(401);
+	});
 
 	//Login Google:
 	//app.get('/v1/auth/google', users.loginGoogle);
