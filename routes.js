@@ -36,12 +36,12 @@ function setup(app) {
 	//app.get('/v1/connect/twitter/callback', users.loginTwitterCallback);
 
 	app.get('/v1/auth/facebook', passport.authenticate('facebook', { scope: ['public_profile', 'email', 'user_birthday'] }));
-	app.get('/v1/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/auth/success', failureRedirect: '/auth/failure' }));
+	app.get('/v1/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/v1/auth/success', failureRedirect: '/v1/auth/failure' }));
 	app.get('/v1/auth/success', function(req, res) {
-	    res.send({user: req.user ? req.user : null });
+	    res.render("<script>window.close()</script>");
 	});
 	app.get('/v1/auth/failure', function(req, res) {
-	    res.send(401);
+	    res.render("<script>window.close()</script>");
 	});
 
 	//Login Google:

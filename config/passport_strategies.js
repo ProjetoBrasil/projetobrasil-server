@@ -27,7 +27,7 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 					{
 						console.log("Não achou usuário. Tentarei criar um.");
 						user = {
-							name: profile.displayName,
+							nome: profile.displayName,
 							username: profile.emails[0].value,
 							provider_id: profile.id,
 							provider: 'facebook'
