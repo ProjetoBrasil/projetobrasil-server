@@ -65,9 +65,9 @@ function setup(app) {
 	//Proposals routes
 	app.get('/v1/proposals', proposals.findAll);
 	app.get('/v1/proposal/:id', proposals.findById);
-	//app.post('/v1/proposal', checkAuthorization, proposals.add);
+	app.post('/v1/proposal', checkAuthorization, proposals.add);
 	//app.put('/v1/proposal/:id', checkAuthorization, proposals.update);
-	//app.delete('/v1/proposal/:id', checkAuthorization, proposals.delete); 
+	app.delete('/v1/proposal/:id', checkAuthorization, proposals.delete); 
 
 	//Goods routes
 	app.get('/v1/goods', goods.findAll);
@@ -100,7 +100,10 @@ function setup(app) {
 	app.post('/v1/rating/:id', checkAuthorization, rating.update);
 	app.get('/v1/graphRating/:id', rating.generatesGraphById);
 
-	//app.post('/v1/import', importation.importProposal);
+	app.post('/v1/importProposal', importation.importProposal);
+	app.post('/v1/deleteProposal', importation.deleteProposal);
+	app.post('/v1/importCurriculum', importation.importCurriculum);
+	app.post('/v1/deleteCurriculum', importation.deleteCurriculum);
 };
 
 exports.setup = setup;
