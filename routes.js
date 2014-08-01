@@ -11,10 +11,10 @@ function setup(app) {
 	//Routes
 	var politicians = require('./lib/routes/politicians.js'),
 		proposals = require('./lib/routes/proposals.js'),
-		political_parties = require('./lib/routes/political_parties'),
+		//political_parties = require('./lib/routes/political_parties'),
 		userModel = require('./lib/model/userModel'),
 		users = require('./lib/routes/users'),
-		comments = require('./lib/routes/comments'),
+		//comments = require('./lib/routes/comments'),
 		rating = require('./lib/routes/ratings'),
 		goods = require('./lib/routes/goods'),
 		curriculum = require('./lib/routes/curriculum'),
@@ -84,8 +84,8 @@ function setup(app) {
 	//app.delete('/v1/curriculum/:id', checkAuthorization, curriculum.delete); 
 
 	//Political Parties routes
-	app.get('/v1/political_parties', political_parties.findAll);
-	app.get('/v1/political_parties/:sigla', political_parties.findById);
+	//app.get('/v1/political_parties', political_parties.findAll);
+	//app.get('/v1/political_parties/:sigla', political_parties.findById);
 	//app.post('/v1/political_parties', checkAuthorization, political_parties.add);
 	//app.put('/v1/political_parties/:sigla', checkAuthorization, political_parties.update);
 	//app.delete('/v1/political_parties/:sigla', checkAuthorization, political_parties.delete);
@@ -100,10 +100,10 @@ function setup(app) {
 	app.post('/v1/rating/:id', checkAuthorization, rating.update);
 	app.get('/v1/graphRating/:id', rating.generatesGraphById);
 
-	app.post('/v1/importProposal', importation.importProposal);
-	app.post('/v1/deleteProposal', importation.deleteProposal);
-	app.post('/v1/importCurriculum', importation.importCurriculum);
-	app.post('/v1/deleteCurriculum', importation.deleteCurriculum);
+	//app.post('/v1/importProposal', importation.importProposal);
+	//app.post('/v1/deleteProposal', importation.deleteProposal);
+	//app.post('/v1/importCurriculum', importation.importCurriculum);
+	//app.post('/v1/deleteCurriculum', importation.deleteCurriculum);
 };
 
 exports.setup = setup;
