@@ -65,9 +65,9 @@ function setup(app) {
 	//Proposals routes
 	app.get('/v1/proposals', proposals.findAll);
 	app.get('/v1/proposal/:id', proposals.findById);
-	app.post('/v1/proposal', checkAuthorization, proposals.add);
+	//app.post('/v1/proposal', checkAuthorization, proposals.add);
 	//app.put('/v1/proposal/:id', checkAuthorization, proposals.update);
-	app.delete('/v1/proposal/:id', checkAuthorization, proposals.delete); 
+	//app.delete('/v1/proposal/:id', checkAuthorization, proposals.delete); 
 
 	//Goods routes
 	app.get('/v1/goods', goods.findAll);
@@ -104,6 +104,12 @@ function setup(app) {
 	//app.post('/v1/deleteProposal', importation.deleteProposal);
 	//app.post('/v1/importCurriculum', importation.importCurriculum);
 	//app.post('/v1/deleteCurriculum', importation.deleteCurriculum);
+
+	//Services for Blind Test app
+	//app.get('/v1/blindTest/proposals/sort/:qtd', proposals.findRandom);
+	//app.get('/v1/blindTest/proposals/themes', proposals.findThemes);
+	//app.get('/v1/blindTest/user/ratings', checkAuthorization, users.findRatingsById); 
+	//app.post('/v1/blindTest/rating/:id', checkAuthorization, rating.update);
 };
 
 exports.setup = setup;
