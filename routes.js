@@ -106,7 +106,7 @@ function setup(app) {
 	//app.post('/v1/deleteCurriculum', importation.deleteCurriculum);
 
 	//Services for Blind Test app
-	//app.get('/v1/blindTest/proposals/sort/:qtd', proposals.findRandom);
+	app.get('/v1/blindTest/proposals/sort/:qtd', proposals.findRandom);
 	//app.get('/v1/blindTest/proposals/themes', proposals.findThemes);
 	//app.get('/v1/blindTest/user/ratings', checkAuthorization, users.findRatingsById); 
 	//app.post('/v1/blindTest/rating/:id', checkAuthorization, rating.update);
