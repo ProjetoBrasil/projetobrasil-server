@@ -83,19 +83,6 @@ function setup(app) {
 	//app.put('/v1/curriculum/:id', checkAuthorization, curriculum.update);
 	//app.delete('/v1/curriculum/:id', checkAuthorization, curriculum.delete); 
 
-	//Political Parties routes
-	//app.get('/v1/political_parties', political_parties.findAll);
-	//app.get('/v1/political_parties/:sigla', political_parties.findById);
-	//app.post('/v1/political_parties', checkAuthorization, political_parties.add);
-	//app.put('/v1/political_parties/:sigla', checkAuthorization, political_parties.update);
-	//app.delete('/v1/political_parties/:sigla', checkAuthorization, political_parties.delete);
-
-	/*//Comments routes
-	app.get('/v1/comments', comments.findAll);
-	app.get('/v1/comments/:id', comments.findById);
-	app.post('/v1/comment', checkAuthorization, comments.add);
-	app.delete('/v1/comment/:id', checkAuthorization, comments.delete);*/
-
 	app.get('/v1/rating/:id', rating.findById);
 	app.post('/v1/rating/:id', checkAuthorization, rating.update);
 	app.get('/v1/graphRating/:id', rating.generatesGraphById);
