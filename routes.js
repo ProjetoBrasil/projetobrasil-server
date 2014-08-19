@@ -11,11 +11,10 @@ function setup(app) {
 	//Routes
 	var politicians = require('./lib/routes/politicians.js'),
 		proposals = require('./lib/routes/proposals.js'),
-		//political_parties = require('./lib/routes/political_parties'),
 		userModel = require('./lib/model/userModel'),
 		users = require('./lib/routes/users'),
-		//comments = require('./lib/routes/comments'),
 		rating = require('./lib/routes/ratings'),
+		blind_rating = require('./lib/routes/blind_ratings'),
 		goods = require('./lib/routes/goods'),
 		curriculum = require('./lib/routes/curriculum'),
 		importation = require('./lib/aux/import');
@@ -94,9 +93,8 @@ function setup(app) {
 
 	//Services for Blind Test app
 	app.get('/v1/blindTest/proposals/sort/:qtd', proposals.findRandom);
-	//app.get('/v1/blindTest/proposals/themes', proposals.findThemes);
-	//app.get('/v1/blindTest/user/ratings', checkAuthorization, users.findRatingsById); 
-	//app.post('/v1/blindTest/rating/:id', checkAuthorization, rating.update);
+	app.get('/v1/blindTest/user/ratings', checkAuthorization, users.findBlindRatingsById); 
+	app.post('/v1/blindTest/rating/:id', checkAuthorization, blind_rating.update);
 };
 
 exports.setup = setup;
