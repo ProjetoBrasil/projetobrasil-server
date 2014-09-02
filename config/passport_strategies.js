@@ -26,6 +26,9 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 					if(!user)
 					{
 						console.log("Não achou usuário. Tentarei criar um.");
+						if(profile.emails == undefined)
+							return done({error:"Profile não autorizou o email."});
+
 						user = {
 							nome: profile.displayName,
 							username: profile.emails[0].value,

@@ -45,9 +45,9 @@ passport.use(strategies.facebookStrategy(secret.facebookAppId, secret.facebookAp
 passport.use(new LocalStrategy(function(username, password, done) {
 		username = username || '';
 		password = password || '';
-		if(username == '' || password = '')
+		if(username == '' || password == '')
 			done(null, false,  { message:"Não foi informado email ou senha."});
-		ddb.getItem('accounts', username, null, {}, function(err, user) {
+		else ddb.getItem('accounts', username, null, {}, function(err, user) {
 			if(err)
 				done(err);
 			if(!user) {
