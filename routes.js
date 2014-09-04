@@ -97,7 +97,7 @@ function setup(app) {
 	app.post('/v1/blindTest/rating/:id', checkAuthorization, blind_rating.update);
 
 
-	app.post('/v1/test', rating.media);
+	app.get('/v1/test', rating.media);
 };
 
 exports.setup = setup;
