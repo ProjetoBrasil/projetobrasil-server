@@ -95,9 +95,6 @@ function setup(app) {
 	app.get('/v1/blindTest/proposals/sort/:qtd', proposals.findRandom);
 	app.get('/v1/blindTest/user/ratings', checkAuthorization, users.findCompleteBlindRatingsById); 
 	app.post('/v1/blindTest/rating/:id', checkAuthorization, blind_rating.update);
-
-
-	app.get('/v1/test', rating.media);
 };
 
 exports.setup = setup;
