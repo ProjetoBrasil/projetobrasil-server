@@ -2,7 +2,7 @@ var passport = require('passport');
 
 var checkAuthorization = function (req, res, next) {
     if (!req.user) {
-        return res.send(401,{ error: 'The user can not do this action witout login.' });
+        return res.send(401,{ error: 'The user can not do this action without login.' });
     }
     next();
 };
@@ -34,7 +34,7 @@ function setup(app) {
 	//app.get('/v1/connect/twitter', users.loginTwitter);
 	//app.get('/v1/connect/twitter/callback', users.loginTwitterCallback);
 
-	app.get('/v1/auth/facebook', passport.authenticate('facebook', { scope: ['public_profile', 'email', 'user_birthday'] }));
+	app.get('/v1/auth/facebook', passport.authenticate('facebook', { scope: ['public_profile', 'email', 'user_birthday', 'user_education_history', 'user_friends', 'user_location'] }));
 	app.get('/v1/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/v1/auth/success', failureRedirect: '/v1/auth/failure' }));
 	app.get('/v1/auth/success', function(req, res) {
 	    res.send("<script>window.close()</script>");
