@@ -14,7 +14,7 @@ var express = require('express'),
 var ddb = require('./config/dynamo_database').ddb,
 	LocalStrategy =   require('passport-local').Strategy;
 
-app.listen(4242);
+app.listen(80);
 app.use(bodyParser());
 app.use(morgan());
 app.use(cookieSession({ keys: ['key1','key2']}));
