@@ -90,6 +90,14 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 								});
 								newUser.escolaridade = {value: max};
 							}
+							
+							ddb.updateItem('accounts', user.username, null, newUser, function (err, updatedUser) {
+								if (!err) {
+									console.log("Updated User");
+								} else {
+									console.log(err);
+								}
+							});
 						}
 						return done(err, user);
 					}
