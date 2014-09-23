@@ -14,40 +14,58 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 		},
 		function(accessToken, refreshToken, profile, done) {
 			console.log(profile);
-			ddb.scan('accounts', {filter : { provider_id : {eq:profile._json.id}}}, function (err, users) {
+			if(profile.emails == undefined)
+							return done({error:"Profile não autorizou o email."});
+
+			ddb.getItem('accounts', profile.emails[0].value, null, {}, function (err, user) {
 
 				if(err){
-					console.log("Deu erro");
+					//console.log("Deu erro");
 					return done(err);
 				}else
 				{
-					console.log("Procurando usuário:");
-					user = users[0];
 					if(!user)
 					{
-						console.log("Não achou usuário. Tentarei criar um.");
-						if(profile.emails == undefined)
-							return done({error:"Profile não autorizou o email."});
-
 						user = {
 							nome: profile.displayName,
 							username: profile.emails[0].value,
 							provider_id: profile.id,
-							provider: 'facebook'
+							provider: 'facebook',
+							dataNascimento: profile._json.birthday,
+							sexo: profile._json.gender
 						};
+
+						if(profile.location != undefined)
+							user.cidade = profile.location.id;
+
+						if(profile._json.education != undefined){
+							var max = 0;
+							profile._json.education.forEach(function(item){
+								var val;
+								switch(item.type){
+									case "High School" val = 1; break;
+									case "College" val = 2; break;
+									case "Graduate School" val = 3; break;
+									case default val = 0;
+								}
+								if(val>max) max = val;
+							});
+							user.escolaridade = max;
+						}
+
 						ddb.putItem('accounts', user, {}, function (err) {
 							if (!err) {
-								console.log("Criei usuário e to retornando ele.");
+								//console.log("Criei usuário e to retornando ele.");
 								return done(err, user);
 							} else {
-								console.log("Erro ao criar usuário usuário.");
+								//console.log("Erro ao criar usuário usuário.");
 								console.log(err);
 								return done(err);
 							}
 						});
 					}
 					else{
-						console.log("Achou usuário, retornando ele.");
+						//console.log("Achou usuário, retornando ele.");
 						return done(err, user);
 					}
 				}
