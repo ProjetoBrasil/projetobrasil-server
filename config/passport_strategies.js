@@ -32,7 +32,8 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 							provider_id: profile.id,
 							provider: 'facebook',
 							dataNascimento: profile._json.birthday,
-							sexo: profile._json.gender
+							sexo: profile._json.gender,
+							exportFace: 0
 						};
 
 						if(profile.location != undefined)
@@ -65,7 +66,31 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 						});
 					}
 					else{
-						//console.log("Achou usuário, retornando ele.");
+						if(user.exportFace == undefined){
+							user = {
+								dataNascimento: {value: profile._json.birthday},
+								sexo: {value: profile._json.gender},
+								exportFace: {value: 0}
+							};
+
+							if(profile.location != undefined)
+								user.cidade = {value: profile.location.id};
+
+							if(profile._json.education != undefined){
+								var max = 0;
+								profile._json.education.forEach(function(item){
+									var val;
+									switch(item.type){
+										case "High School" val = 1; break;
+										case "College" val = 2; break;
+										case "Graduate School" val = 3; break;
+										case default val = 0;
+									}
+									if(val>max) max = val;
+								});
+								user.escolaridade = {value: max};
+							}
+						}
 						return done(err, user);
 					}
 				}
