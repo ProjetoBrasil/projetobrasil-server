@@ -67,14 +67,14 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 					}
 					else{
 						if(user.exportFace == undefined){
-							user = {
+							var newUser = {
 								dataNascimento: {value: profile._json.birthday},
 								sexo: {value: profile._json.gender},
 								exportFace: {value: 0}
 							};
 
 							if(profile.location != undefined)
-								user.cidade = {value: profile.location.id};
+								newUser.cidade = {value: profile.location.id};
 
 							if(profile._json.education != undefined){
 								var max = 0;
@@ -88,7 +88,7 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 									}
 									if(val>max) max = val;
 								});
-								user.escolaridade = {value: max};
+								newUser.escolaridade = {value: max};
 							}
 						}
 						return done(err, user);
