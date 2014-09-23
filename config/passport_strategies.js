@@ -44,10 +44,10 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 							profile._json.education.forEach(function(item){
 								var val;
 								switch(item.type){
-									case "High School" val = 1; break;
-									case "College" val = 2; break;
-									case "Graduate School" val = 3; break;
-									case default val = 0;
+									case "High School": val = 1; break;
+									case "College": val = 2; break;
+									case "Graduate School": val = 3; break;
+									default: val = 0;
 								}
 								if(val>max) max = val;
 							});
@@ -81,10 +81,10 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 								profile._json.education.forEach(function(item){
 									var val;
 									switch(item.type){
-										case "High School" val = 1; break;
-										case "College" val = 2; break;
-										case "Graduate School" val = 3; break;
-										case default val = 0;
+										case "High School": val = 1; break;
+										case "College": val = 2; break;
+										case "Graduate School": val = 3; break;
+										default: val = 0;
 									}
 									if(val>max) max = val;
 								});
