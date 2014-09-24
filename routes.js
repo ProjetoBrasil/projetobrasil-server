@@ -96,6 +96,9 @@ function setup(app) {
 	app.get('/v1/blindTest/proposals/sort/:qtd', proposals.findRandom);
 	app.get('/v1/blindTest/user/ratings', checkAuthorization, users.findCompleteBlindRatingsById); 
 	app.post('/v1/blindTest/rating/:id', checkAuthorization, blind_rating.update);
+
+	//Services for UFC
+	app.get('/v1/ufc/proposals/rand', proposals.findUFC);
 };
 
 exports.setup = setup;
