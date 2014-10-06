@@ -99,6 +99,7 @@ function setup(app) {
 
 	//Services for UFC
 	app.get('/v1/ufc/proposals/rand', proposals.findUFC);
+	app.post('/v1/ufc/proposals/vote', proposals.findUFC);
 };
 
 exports.setup = setup;
