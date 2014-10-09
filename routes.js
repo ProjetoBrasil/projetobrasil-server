@@ -103,6 +103,7 @@ function setup(app) {
 	app.post('/v1/ufc/proposals/vote', checkAuthorization, proposals.saveUFCVote);
 	app.get('/v1/ufc/ranking', checkAuthorization, proposals.profileRankUFC);
 	app.get('/v1/ufc/ranking/global', proposals.rankUFC);
+	app.get('/v1/ufc/import', proposals.importPropostas);
 };
 
 exports.setup = setup;
