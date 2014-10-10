@@ -98,8 +98,7 @@ function setup(app) {
 	app.post('/v1/blindTest/rating/:id', checkAuthorization, blind_rating.update);
 
 	//Services for UFC
-	app.get('/v1/ufc/proposals/rand/:id', proposals.findUFC);
-	app.get('/v1/ufc/proposals/rand', proposals.findUFC);
+	app.get('/v1/ufc/proposals/rand/:id', checkAuthorization, proposals.findUFC);
 	app.post('/v1/ufc/proposals/vote', checkAuthorization, proposals.saveUFCVote);
 	app.get('/v1/ufc/ranking', checkAuthorization, proposals.profileRankUFC);
 	app.get('/v1/ufc/ranking/global', proposals.rankUFC);
