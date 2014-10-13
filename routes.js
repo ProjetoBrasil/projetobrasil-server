@@ -87,7 +87,7 @@ function setup(app) {
 	app.post('/v1/rating/:id', checkAuthorization, rating.update);
 	app.get('/v1/graphRating/:id', rating.generatesGraphById);
 
-	//app.post('/v1/importProposal', importation.importProposal);
+	app.post('/v1/importProposal', importation.importProposal);
 	//app.post('/v1/deleteProposal', importation.deleteProposal);
 	//app.post('/v1/importCurriculum', importation.importCurriculum);
 	//app.post('/v1/deleteCurriculum', importation.deleteCurriculum);
