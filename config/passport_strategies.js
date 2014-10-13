@@ -14,8 +14,6 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 		},
 		function(accessToken, refreshToken, profile, done) {
 			console.log(profile);
-			if(profile.emails == undefined)
-							return done({error:"Profile não autorizou o email."});
 
 			ddb.getItem('accounts', profile.emails[0].value, null, {}, function (err, user) {
 
@@ -26,9 +24,12 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 				{
 					if(!user)
 					{
+						var uname = profile.id;
+						if(profile.emails != undefined)
+							 uname = profile.emails[0].value;
 						user = {
 							nome: profile.displayName,
-							username: profile.emails[0].value,
+							username: uname,
 							provider_id: profile.id,
 							provider: 'facebook',
 							dataNascimento: profile._json.birthday,
