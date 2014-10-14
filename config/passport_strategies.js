@@ -28,12 +28,12 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 					{
 						
 						user = {
-							nome: profile.displayName,
+							nome: profile.displayName || '',
 							username: uname,
 							provider_id: profile.id,
 							provider: 'facebook',
-							dataNascimento: profile._json.birthday,
-							sexo: profile._json.gender,
+							dataNascimento: profile._json.birthday || '',
+							sexo: profile._json.gender || '',
 							exportFace: 0
 						};
 
