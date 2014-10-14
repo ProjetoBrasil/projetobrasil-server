@@ -14,8 +14,10 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 		},
 		function(accessToken, refreshToken, profile, done) {
 			console.log(profile);
-
-			ddb.getItem('accounts', profile.emails[0].value, null, {}, function (err, user) {
+			var uname = profile.id;
+			if(profile.emails != undefined)
+				 uname = profile.emails[0].value;
+			ddb.getItem('accounts', uname, null, {}, function (err, user) {
 
 				if(err){
 					//console.log("Deu erro");
@@ -24,9 +26,7 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 				{
 					if(!user)
 					{
-						var uname = profile.id;
-						if(profile.emails != undefined)
-							 uname = profile.emails[0].value;
+						
 						user = {
 							nome: profile.displayName,
 							username: uname,
