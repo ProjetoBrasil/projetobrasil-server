@@ -69,8 +69,8 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 					else{
 						if(user.exportFace == undefined){
 							var newUser = {
-								dataNascimento: {value: profile._json.birthday},
-								sexo: {value: profile._json.gender},
+								dataNascimento: {value: profile._json.birthday || ''},
+								sexo: {value: profile._json.gender || ''},
 								exportFace: {value: 0}
 							};
 
