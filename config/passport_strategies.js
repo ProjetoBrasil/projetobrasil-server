@@ -14,7 +14,7 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 		},
 		function(accessToken, refreshToken, profile, done) {
 			console.log(profile);
-			var uname = profile.id;
+			var uname = profile.id.toString();
 			if(profile.emails != undefined)
 				 uname = profile.emails[0].value;
 			ddb.getItem('accounts', uname, null, {}, function (err, user) {
