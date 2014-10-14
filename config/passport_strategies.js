@@ -32,10 +32,12 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 							username: uname,
 							provider_id: profile.id,
 							provider: 'facebook',
-							dataNascimento: profile._json.birthday || '',
 							sexo: profile._json.gender || '',
 							exportFace: 0
 						};
+
+						if(profile._json.birthday!= undefined)
+							user.dataNascimento = profile._json.birthday;
 
 						if(profile.location != undefined)
 							user.cidade = profile.location.id;
@@ -69,10 +71,12 @@ exports.facebookStrategy = function (facebookAppId, facebookAppSecret) {
 					else{
 						if(user.exportFace == undefined){
 							var newUser = {
-								dataNascimento: {value: profile._json.birthday || ''},
 								sexo: {value: profile._json.gender || ''},
 								exportFace: {value: 0}
 							};
+							
+							if(profile._json.birthday!= undefined)
+								user.dataNascimento = {value: profile._json.birthday};
 
 							if(profile.location != undefined)
 								newUser.cidade = {value: profile.location.id};
