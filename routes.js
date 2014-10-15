@@ -104,6 +104,7 @@ function setup(app) {
 	app.get('/v1/ufc/ranking/user', checkAuthorization, proposals.profileRankUFC);
 	app.get('/v1/ufc/ranking/user/:hash', proposals.profileHashRankUFC);
 	app.get('/v1/ufc/user/hash', checkAuthorization, users.profileHashUFC);
+	app.get('/v1/ufc/user/name/:hash', checkAuthorization, users.profileNameHashUFC);
 	app.get('/v1/ufc/ranking/global', proposals.rankUFC);
 	app.get('/v1/ufc/import', proposals.importPropostas);
 };
