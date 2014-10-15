@@ -101,6 +101,8 @@ function setup(app) {
 	app.get('/v1/ufc/proposals/rand/:id', checkAuthorization, proposals.findUFC);
 	app.post('/v1/ufc/proposals/vote', checkAuthorization, proposals.saveUFCVote);
 	app.get('/v1/ufc/ranking', checkAuthorization, proposals.profileRankUFC);
+	app.get('/v1/ufc/ranking/:hash', proposals.profileHashRankUFC);
+	app.get('/v1/ufc/user/hash', checkAuthorization, users.profileHashUFC);
 	app.get('/v1/ufc/ranking/global', proposals.rankUFC);
 	app.get('/v1/ufc/import', proposals.importPropostas);
 };
