@@ -211,6 +211,67 @@ Não
 Retorno:
 Um array de objetos, cada um contendo os mesmos campos do perfil de um candidato
 
+### Teste cego
+Rota:
+```
+api.projetobrasil.org/v1/blindTest/user/ratings
+```
+Restrito a usuários logados: 
+```
+Sim
+```
+Retorno:
+Um array de objetos, cada um contendo:
+
+| Campo             |  Descrição    | Retorno       |
+| -------------     |---------------|---------------|
+| palavras_chaves   |               | string |
+| titulo   |               | string |
+| id   |               | string |
+| politicians_id   |               | string |
+| blindMedia   |               | float |
+| created_at   |               | integer |
+| tema   |               | string |
+| subtema   |               | string |
+| updated_at   |               | integer |
+| fonte   |               | string |
+| media   |               | float |
+| nota   |               | integer |
+
+### Teste cego
+Rota:
+```
+api.projetobrasil.org/v1/blindTest/proposals/sort/:count
+```
+Parâmetros:
+| Campo             |  Descrição    | Obrigatório       |
+| -------------     |---------------|---------------|
+| count   | Quantidade de propostas requisitadas no teste cego. Máximo X.               | Sim |
+
+~~TODO: Definir limite máximo de count~~
+
+Restrito a usuários logados: 
+```
+Sim
+```
+Retorno:
+Um array de objetos, cada um contendo:
+
+| Campo             |  Descrição    | Retorno       |
+| -------------     |---------------|---------------|
+| palavras_chaves   |               | string |
+| titulo   |               | string |
+| id   |               | string |
+| politicians_id   |               | string |
+| blindMedia   |               | float |
+| created_at   |               | integer |
+| tema   |               | string |
+| subtema   |               | string |
+| updated_at   |               | integer |
+| fonte   |               | string |
+| media   |               | float |
+
+
 ## Examples
 _(Coming soon)_
 
