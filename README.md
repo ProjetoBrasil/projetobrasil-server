@@ -32,28 +32,184 @@ Sim
 
 Retorno:
 
-| Campo             | Retorno       | Descrição       |
+| Campo             |  Descrição    | Retorno       |
 | -------------     |---------------|---------------|
-| ratingsImported   | integer       | |
-| username          | string        | |
-| escolaridade      | string        | |
-| ratedProposals    | array         | |
-| provider_id       | string        | |
-| exportFace        | integer       | |
-| preferenciaPoliticaPublica | array | |
-| sexo              | string        | |
-| nome              | string        | |
-| provider          | string        | |
-| partidoPreferencia | string       | |
-| engajamentoPolitico | string      | |
-| renda             | string        | |
-| cidade            | string        | |
-| imported          | string        | |
-| blindRatedProposals | array       | |
-| cidadeOndeVota    | string        | |
-| updated_at        | string        | |
-| dataNascimento    | string        | |
+| ratingsImported   |               | integer |
+| username          |               | string |
+| escolaridade      |               | string |
+| ratedProposals    |               | array |
+| provider_id       |               | string |
+| exportFace        |               | integer |
+| preferenciaPoliticaPublica |      | array |
+| sexo              |               | string |
+| nome              |               | string |
+| provider          |               | string |
+| partidoPreferencia |              | string |
+| engajamentoPolitico |             | string |
+| renda             |               | string |
+| cidade            |               | string |
+| imported          |               | string |
+| blindRatedProposals |             | array |
+| cidadeOndeVota    |               | string |
+| updated_at        |               | string |
+| dataNascimento    |               | string |
 
+
+### Propostas políticas
+Rota:
+```
+api.projetobrasil.org/v1/proposals
+```
+Restrito a usuários logados: 
+```
+Não
+```
+
+Retorno:
+Um array de objetos, cada um contendo:
+
+| Campo             |  Descrição    | Retorno       |
+| -------------     |---------------|---------------|
+| palavras_chaves   |               | string |
+| titulo   |            | string |
+| id   |               | string |
+| politicians_id   |               | string |
+| blindMedia   |               | float |
+| created_at   |               | string |
+| tema   |               | string |
+| subtema   |               | string |
+| updated_at   |               | string |
+| fonte   |               | string |
+| media   |               | double |
+
+### Proposta
+Rota:
+```
+api.projetobrasil.org/v1/proposal/:id
+```
+Restrito a usuários logados: 
+```
+Não
+```
+
+Retorno:
+Um objeto contendo:
+
+| Campo             |  Descrição    | Retorno       |
+| -------------     |---------------|---------------|
+| palavras_chaves   |               | string |
+| titulo   |            | string |
+| id   |               | string |
+| politicians_id   |               | string |
+| blindMedia   |               | float |
+| created_at   |               | string |
+| tema   |               | string |
+| subtema   |               | string |
+| updated_at   |               | string |
+| fonte   |               | string |
+| media   |               | double |
+
+
+### Candidato
+
+#### Perfil
+
+Rota:
+```
+api.projetobrasil.org/v1/politician/:id
+```
+Restrito a usuários logados: 
+```
+Não
+```
+
+Retorno:
+Um objeto contendo:
+
+| Campo             |  Descrição    | Retorno       |
+| -------------     |---------------|---------------|
+| nome_coligacao   |               | string |
+| titulo   |            | string |
+| partido   |               | string |
+| created_at   |               | integer |
+| facebook   |               | string |
+| twitter   |               | string |
+| fonte_historico   |               | string |
+| youtube   |               | string |
+| image_partido   |               | string |
+| composicao_coligacao   |               | string |
+| nome   |               | string |
+| gplus   |               | string |
+| id   |               | string |
+| vice   |               | string |
+| formacao   |               | string |
+| nome_urna   |               | string |
+| site   |               | string |
+| nome_url   |               | string |
+| foto   |               | string |
+| updated_at   |               | string |
+| nome_partido   |               | string |
+| numero   |               | string |
+
+#### Bens declarados
+
+Rota:
+```
+api.projetobrasil.org/v1/politician/:id/goods
+```
+Restrito a usuários logados: 
+```
+Não
+```
+
+Retorno:
+Um array de objetos, cada um contendo:
+
+| Campo             |  Descrição    | Retorno       |
+| -------------     |---------------|---------------|
+| created_at   |               | integer |
+| id   |               | string |
+| politicians_id   |               | string |
+| valor   |               | string |
+| updated_at   |               | integer |
+| descricao   |               | string |
+
+#### Histórico
+
+Rota:
+```
+api.projetobrasil.org/v1/politician/:id/curriculum
+```
+Restrito a usuários logados: 
+```
+Não
+```
+
+Retorno:
+Um array de objetos, cada um contendo:
+
+| Campo             |  Descrição    | Retorno       |
+| -------------     |---------------|---------------|
+| created_at   |               | integer |
+| id   |               | string |
+| politicians_id   |               | string |
+| categoria   |               | string |
+| updated_at   |               | integer |
+| descricao   |               | string |
+| data   |               | string |
+
+### Candidatos
+Rota:
+```
+api.projetobrasil.org/v1/politicians
+```
+Restrito a usuários logados: 
+```
+Não
+```
+
+Retorno:
+Um array de objetos, cada um contendo os mesmos campos do perfil de um candidato
 
 ## Examples
 _(Coming soon)_
