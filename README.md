@@ -10,10 +10,10 @@ var projetobrasil-server = require('projetobrasil-server');
 projetobrasil-server.awesome(); // "awesome"
 ```
 
-## Documentation
+## Documentação
 A URL base da API é `api.projetobrasil.org`
 
-### Tipos de requisições ###
+### Tipos de requisições
 Os protocolos padrões de HTTP são utilizados para comunicação com o servidor:
  * `GET`
  * `POST`
@@ -21,7 +21,7 @@ Os protocolos padrões de HTTP são utilizados para comunicação com o servidor
  * `DELETE`
 
 ### Perfil ###
-Requisição:
+Rota:
 ```
 api.projetobrasil.org/v1/profile
 ```
