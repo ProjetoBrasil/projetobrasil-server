@@ -1,4 +1,4 @@
-# projetobrasil-server [![Build Status](https://secure.travis-ci.org/luizpcf@gmail.com/projetobrasil-server.png?branch=master)](http://travis-ci.org/luizpcf@gmail.com/projetobrasil-server)
+# projetobrasil-server [![Build Status](https://secure.travis-ci.org/fth-ship/projetobrasil-server.png?branch=master)](http://travis-ci.org/fth-ship/projetobrasil-server)
 
 Servidor REST do ProjetoBrasil.org
 
@@ -11,7 +11,49 @@ projetobrasil-server.awesome(); // "awesome"
 ```
 
 ## Documentation
-_(Coming soon)_
+A URL base da API é `api.projetobrasil.org`
+
+### Tipos de requisições ###
+Os protocolos padrões de HTTP são utilizados para comunicação com o servidor:
+ * `GET`
+ * `POST`
+ * `PUT`
+ * `DELETE`
+
+### Perfil ###
+Requisição:
+```
+api.projetobrasil.org/v1/profile
+```
+Restrito a usuários logados: 
+```
+Sim
+```
+
+Retorno:
+
+| Campo             | Retorno       | Descrição       |
+| -------------     |---------------|---------------|
+| ratingsImported   | integer       | |
+| username          | string        | |
+| escolaridade      | string        | |
+| ratedProposals    | array         | |
+| provider_id       | string        | |
+| exportFace        | integer       | |
+| preferenciaPoliticaPublica | array | |
+| sexo              | string        | |
+| nome              | string        | |
+| provider          | string        | |
+| partidoPreferencia | string       | |
+| engajamentoPolitico | string      | |
+| renda             | string        | |
+| cidade            | string        | |
+| imported          | string        | |
+| blindRatedProposals | array       | |
+| cidadeOndeVota    | string        | |
+| updated_at        | string        | |
+| dataNascimento    | string        | |
+
 
 ## Examples
 _(Coming soon)_
