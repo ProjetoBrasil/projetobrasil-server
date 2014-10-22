@@ -10,11 +10,8 @@ var projetobrasil-server = require('projetobrasil-server');
 projetobrasil-server.awesome(); // "awesome"
 ```
 
-## Documentação
+## Documentation
 [Referência da API](https://github.com/brunomperes/projetobrasil-server/wiki/API:-Geral)
-
-## Examples
-_(Coming soon)_
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
