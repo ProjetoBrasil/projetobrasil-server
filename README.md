@@ -11,7 +11,7 @@ projetobrasil-server.awesome(); // "awesome"
 ```
 
 ## Documentation
-[Referência da API](https://github.com/brunomperes/projetobrasil-server/wiki/API:-Geral)
+[API Reference](https://github.com/brunomperes/projetobrasil-server/wiki/API:-Geral)
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
