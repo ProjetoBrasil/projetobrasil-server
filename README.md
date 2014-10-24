@@ -3,12 +3,9 @@
 Servidor REST do ProjetoBrasil.org
 
 ## Getting Started
-Install the module with: `npm install projetobrasil-server`
+Install the module dependencies with: `npm install`
 
-```javascript
-var projetobrasil-server = require('projetobrasil-server');
-projetobrasil-server.awesome(); // "awesome"
-```
+Start server with: `node server.js`
 
 ## Documentation
 [API Reference](https://github.com/brunomperes/projetobrasil-server/wiki/API:-Geral)
