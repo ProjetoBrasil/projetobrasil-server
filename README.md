@@ -1,4 +1,4 @@
-# projetobrasil-server [![Build Status](https://secure.travis-ci.org/luizpcf@gmail.com/projetobrasil-server.png?branch=master)](http://travis-ci.org/luizpcf@gmail.com/projetobrasil-server)
+# projetobrasil-server [![Build Status](https://secure.travis-ci.org/fth-ship/projetobrasil-server.png?branch=master)](http://travis-ci.org/fth-ship/projetobrasil-server)
 
 Servidor REST do ProjetoBrasil.org
 
@@ -11,10 +11,7 @@ projetobrasil-server.awesome(); // "awesome"
 ```
 
 ## Documentation
-_(Coming soon)_
-
-## Examples
-_(Coming soon)_
+[API Reference](https://github.com/brunomperes/projetobrasil-server/wiki/API:-Geral)
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
