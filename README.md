@@ -13,10 +13,10 @@ projetobrasil-server.awesome(); // "awesome"
 ## Documentation
 [API Reference](https://github.com/brunomperes/projetobrasil-server/wiki/API:-Geral)
 
-### Bugs and suggestions
+## Bugs and suggestions
 Please report on the [issues page](https://github.com/ProjetoBrasil/projetobrasil-server/issues)
 
-### Contact
+## Contact
 http://www.projetobrasil.org/
 
 contato@projetobrasil.org
