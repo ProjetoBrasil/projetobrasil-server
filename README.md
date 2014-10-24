@@ -8,7 +8,7 @@ Install the module dependencies with: `npm install`
 Start server with: `node server.js`
 
 ## Documentation
-[API Reference](https://github.com/brunomperes/projetobrasil-server/wiki/API:-Geral)
+[API Reference](https://github.com/ProjetoBrasil/projetobrasil-server/wiki/API%3A-Geral)
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
