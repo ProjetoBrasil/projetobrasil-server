@@ -27,7 +27,7 @@ function setup(app) {
 	app.get('/v1/user/logout', users.logout);
 	app.get('/v1/user/validadeMail/:username/:comfirmationPass', users.validadeMail);
 
-	app.get('/v1/profile', users.findAll);
+	app.get('/v1/users', users.findAll);
 	app.get('/v1/profile', users.findById);
 	app.put('/v1/profile', checkAuthorization, users.update);
 	app.get('/v1/profile/ratings', users.findRatingsById); 
